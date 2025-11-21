@@ -107,7 +107,7 @@ void main() {
       expect(find.text('six-inch'), findsOneWidget);
 
       // Find the Switch widget and toggle it
-      final switchFinder = find.byType(Switch);
+      final switchFinder = find.byKey(const Key('sandwichTypeSwitch'));
       expect(switchFinder, findsOneWidget);
 
       // Tap the Switch to toggle sandwich type
