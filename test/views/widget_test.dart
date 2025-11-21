@@ -68,23 +68,33 @@ void main() {
     // Check the OrderItemDisplay widgets in isolation.
     testWidgets('Displays the correct text for 0 sandwiches',
         (WidgetTester tester) async {
-      const widgetToBeTested = OrderItemDisplay(0, 'Footlong');
+      const widgetToBeTested = OrderItemDisplay(
+        quantity: 0,
+        itemType: 'Footlong',
+        breadType: BreadType.white,
+        orderNote: '',
+      );
       const testApp = MaterialApp(
         home: Scaffold(body: widgetToBeTested),
       );
-      // Build the OrderItemDisplay widget to be tested.
       await tester.pumpWidget(testApp);
-      expect(find.text('0 Footlong sandwich(es): '), findsOneWidget);
+      expect(find.text('0 white Footlong sandwich(es): '), findsOneWidget);
     });
 
     testWidgets('Displays the correct text and emoji for 3 sandwiches',
         (WidgetTester tester) async {
-      const widgetToBeTested = OrderItemDisplay(3, 'Footlong');
+      const widgetToBeTested = OrderItemDisplay(
+        quantity: 3,
+        itemType: 'Footlong',
+        breadType: BreadType.white,
+        orderNote: '',
+      );
       const testApp = MaterialApp(
         home: Scaffold(body: widgetToBeTested),
       );
       await tester.pumpWidget(testApp);
-      expect(find.text('3 Footlong sandwich(es): 🥪🥪🥪'), findsOneWidget);
+      expect(
+          find.text('3 white Footlong sandwich(es): 🥪🥪🥪'), findsOneWidget);
     });
   });
 }
