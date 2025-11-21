@@ -133,6 +133,5 @@ Pull requests and suggestions are welcome! Please open an issue or submit a PR.
 **Email:** [up2274842@myport.ac.uk]  
 **GitHub:** [ty694nite](https://github.com/ty694nite)
 
-For support, use [the dedicated Discord channel](https://discord.com/channels/760155974467059762/1370633732779933806).
 
 ---
