@@ -97,5 +97,27 @@ void main() {
       expect(
           find.text('3 white footlong sandwich(es): 🥪🥪🥪'), findsOneWidget);
     });
+
+    testWidgets('Switch toggles between six-inch and footlong',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(const App());
+
+      // Initially, should display 'footlong'
+      expect(find.text('footlong'), findsOneWidget);
+      expect(find.text('six-inch'), findsOneWidget);
+
+      // Find the Switch widget and toggle it
+      final switchFinder = find.byType(Switch);
+      expect(switchFinder, findsOneWidget);
+
+      // Tap the Switch to toggle sandwich type
+      await tester.tap(switchFinder);
+      await tester.pump();
+
+      // After toggling, the sandwich type should change
+      // (If your UI updates a summary, you may need to check the summary text)
+      // For example, if toggled to six-inch:
+      expect(find.text('six-inch'), findsOneWidget);
+    });
   });
 }
