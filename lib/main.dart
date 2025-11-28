@@ -260,6 +260,24 @@ class _OrderScreenState extends State<OrderScreen> {
                 backgroundColor: Colors.green,
               ),
               const SizedBox(height: 20),
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.yellow[100],
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(color: Colors.yellow[700]!),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text('Cart Summary', style: heading2),
+                    const SizedBox(height: 8),
+                    Text('Items: ${_cart.items.length}'),
+                    Text('Total: \$${_cart.totalPrice().toStringAsFixed(2)}'),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
