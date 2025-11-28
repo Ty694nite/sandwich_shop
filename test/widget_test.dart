@@ -22,8 +22,9 @@ void main() {
     testWidgets('increments quantity when Add is tapped',
         (WidgetTester tester) async {
       await tester.pumpWidget(const App());
-      await tester.tap(find.byIcon(Icons.add));
+      await tester.tap(find.byKey(const Key('addQuantityButton')));
       await tester.pump();
+      expect(find.byKey(const Key('quantityText')), findsOneWidget);
       expect(find.text('2'), findsOneWidget);
     });
 
