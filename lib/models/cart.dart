@@ -15,13 +15,12 @@ class CartItem {
 
 class Cart {
   final List<CartItem> items = [];
-  final PricingRepository pricingRepository;
+  final PricingRepository pricingRepository = PricingRepository();
   double discount = 0.0;
   String? promoCode;
   final double restaurantMinimumOrder;
 
   Cart({
-    required this.pricingRepository,
     this.restaurantMinimumOrder = 0.0,
   });
 
